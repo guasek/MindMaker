@@ -1,0 +1,13 @@
+node_modules
+dist
+.tmp
+.sass-cache
+.idea
+app/bower_components
+
+platforms/**/
+www
+!www/config.xml
+!www/res
+app/bower_components
+platforms
