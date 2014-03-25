@@ -4,8 +4,10 @@ angular.module('mindMakerApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'shoppinpal.mobile-menu'
 ])
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
