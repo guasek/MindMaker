@@ -18,13 +18,13 @@ angular.module('shoppinpal.mobile-menu', [])
             var menu = {};
 
             menu.toggleLeft = function toggleLeft() {
-                var menu = angular.element(document.querySelector('#sp-nav'));
-                menu.toggleClass('show');
+                var menu = angular.element(document.querySelector('#sp-nav-left'));
+                menu.toggleClass('show-left');
             };
 
             menu.toggleRight = function toggleRight() {
-                var menu = angular.element(document.querySelector('#sp-nav'));
-                menu.toggleClass('show');
+                var menu = angular.element(document.querySelector('#sp-nav-right'));
+                menu.toggleClass('show-right');
             };
 
             return menu;
