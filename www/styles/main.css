@@ -44,29 +44,29 @@
 #sp-nav-left.show-left,
 #sp-nav-right.show-right{
     display: block;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-#sp-nav-left.show-left ~ #sp-page,
-#sp-nav-right.show-right ~ #sp-page{
+#sp-page.show-left,
+#sp-page.show-right{
     display: inline;
     position: absolute;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    overflow-x: hidden;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
-#sp-nav-left.show-left ~ #sp-page{
+#sp-page.show-left{
     -webkit-transform: translateX(80%);
     transform: translateX(80%);
 }
 
-#sp-nav-right.show-right ~ #sp-page{
+#sp-page.show-right{
     -webkit-transform: translateX(-80%);
     transform: translateX(-80%);
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
