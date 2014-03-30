@@ -26,7 +26,6 @@
 
 #sp-nav-left, #sp-nav-right{
     width: 80%;
-    overflow: hidden;
     display: none;
     position: absolute;
     top: 0;
@@ -44,7 +43,6 @@
 #sp-nav-left.show-left,
 #sp-nav-right.show-right{
     display: block;
-    overflow: hidden;
 }
 
 #sp-page.show-left,
@@ -53,8 +51,6 @@
     position: absolute;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
 }
 
 #sp-page.show-left{
@@ -67,6 +63,6 @@
     transform: translateX(-80%);
 }
 
-body {
+html {
     overflow: hidden;
 }
