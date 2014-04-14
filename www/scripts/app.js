@@ -12,7 +12,7 @@ angular.module('mindMakerApp', [
     $routeProvider
     .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainController'
     })
     .otherwise({
         redirectTo: '/'
