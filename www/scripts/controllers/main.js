@@ -2,6 +2,10 @@
 
 var mindmaker = angular.module('mindMakerApp');
 
+mindmaker.controller('mainController', function ($scope) {
+    $scope.askedQuestions = [];
+});
+
 mindmaker.controller('questionController', function ($scope) {
 
     var Option = function () {
@@ -27,5 +31,4 @@ mindmaker.controller('questionController', function ($scope) {
     }
 
     $scope.questionPrototype = Question;
-    $scope.askedQuestions = []
 });

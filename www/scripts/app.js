@@ -11,8 +11,11 @@ angular.module('mindMakerApp', [
 .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/new_question.html',
         controller: 'questionController'
+    })
+    .when('questions', {
+        templateUrl: 'views/answered_question.html'
     })
     .otherwise({
         redirectTo: '/'
