@@ -1,4 +1,7 @@
 <div id="sp-nav-left">
+    <div id="nav-left-header">
+        My questions
+    </div>
     <div class="topcoat-list-container">
         <ul class="topcoat-list">
             <li class="topcoat-list__item">Left menu item 1</li>
@@ -35,15 +38,14 @@
     <div id="main-screen" class="center full">
         <span>Ask me anything</span>
         <form class="full">
-            <textarea id="question-input"></textarea>
-            <textarea ng-show="options[0].visible" ng-model="options[0].value" class="question-option"></textarea>
-            <textarea ng-show="options[1].visible" ng-model="options[1].value" class="question-option"></textarea>
-            <textarea ng-show="options[2].visible" ng-model="options[2].value" class="question-option"></textarea>
-            <textarea ng-show="options[3].visible" ng-model="options[3].value" class="question-option"></textarea>
-            <textarea ng-show="options[4].visible" ng-model="options[4].value" class="question-option"></textarea>
-            <div ng-click="showOption()" ng-show="optionAdder.visible" class="option-tap">
+            <textarea ng-model="question.questionText" id="question-input"></textarea>
+            <textarea
+                    ng-repeat="option in question.options"
+                    ng-model="option.optionValue"
+                    class="question-option"></textarea>
+            <div ng-click="question.addOption()" ng-show="question.remainingOptions" class="option-tap">
                 <span class="icon-add"></span>
-                <span class="tap-text">{{ optionAdder.text }}</span>
+                <span class="tap-text">Add answer option</span>
             </div>
             <button id="submit-button">Ask me now!</button>
         </form>

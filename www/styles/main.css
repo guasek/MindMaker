@@ -36,6 +36,11 @@
     height: 1em;
 }
 
+#nav-left-header{
+    height: 1rem;
+    padding: 1.5rem;
+}
+
 #main-screen {
     position:relative;
 }
