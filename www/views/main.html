@@ -4,9 +4,7 @@
     </div>
     <div class="topcoat-list-container">
         <ul class="topcoat-list">
-            <li class="topcoat-list__item">Left menu item 1</li>
-            <li class="topcoat-list__item">Left menu item 2</li>
-            <li class="topcoat-list__item">Left menu item 3</li>
+            <li ng-repeat="question in askedQuestions" class="topcoat-list__item">{{ question.questionText }}</li>
         </ul>
     </div>
 </div>
@@ -37,7 +35,7 @@
     </div>
     <div id="main-screen" class="center full">
         <span>Ask me anything</span>
-        <form class="full">
+        <form class="full" ng-init="question = questionPrototype.newQuestion(5)">
             <textarea ng-model="question.questionText" id="question-input"></textarea>
             <textarea
                     ng-repeat="option in question.options"
@@ -47,7 +45,7 @@
                 <span class="icon-add"></span>
                 <span class="tap-text">Add answer option</span>
             </div>
-            <button id="submit-button">Ask me now!</button>
+            <button id="submit-button" ng-click="askedQuestions.push(question); question = questionPrototype.newQuestion(5)">Ask me now!</button>
         </form>
     </div>
 </div>

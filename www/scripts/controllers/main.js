@@ -22,5 +22,10 @@ mindmaker.controller('questionController', function ($scope) {
         this.remainingOptions -= 1;
     };
 
-    $scope.question = new Question(5);
+    Question.newQuestion = function (maxOptions){
+        return new Question(maxOptions);
+    }
+
+    $scope.questionPrototype = Question;
+    $scope.askedQuestions = []
 });
