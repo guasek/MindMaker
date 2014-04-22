@@ -1,0 +1,15 @@
+<div id="main-screen" class="center full">
+    <span>Ask me anything</span>
+    <form class="full" ng-init="question = questionPrototype.newQuestion(5)">
+        <textarea ng-model="question.questionText" id="question-input"></textarea>
+        <textarea
+                ng-repeat="option in question.options"
+                ng-model="option.optionValue"
+                class="question-option"></textarea>
+        <div ng-click="question.addOption()" ng-show="question.remainingOptions" class="option-tap">
+            <span class="icon-add"></span>
+            <span class="tap-text">Add answer option</span>
+        </div>
+        <button id="submit-button" class="bottom-button" ng-click="askedQuestions.push(question); question = questionPrototype.newQuestion(5)">Ask me now!</button>
+    </form>
+</div>
