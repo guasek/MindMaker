@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="styles/top-coat.css">
   </head>
   <body ng-app="mindMakerApp" class="ng-scope">
-      <div id="mindmaker-div" ng-controller="mainController">
+      <div id="mindmaker-app" ng-controller="mainController">
           <div id="sp-nav-left">
               <div id="nav-left-header">
                   My questions
               </div>
               <div class="topcoat-list-container">
                   <ul class="topcoat-list">
-                      <li ng-repeat="question in askedQuestions" class="topcoat-list__item">{{ question.questionText }}</li>
+                      <li ng-repeat="question in askedQuestions" class="topcoat-list__item">
+                          <a href="#question/{{$index}}">{{ question.questionText }}</a>
+                      </li>
                   </ul>
               </div>
           </div>

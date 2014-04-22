@@ -1,0 +1,9 @@
+<div>
+    <div id="asked-question">
+        {{ question.questionText }}
+    </div>
+    <ul>
+        <li ng-repeat="option in question.options">{{ option.optionValue }}</li>
+    </ul>
+    <button id="ask-new-button" click-link="#" class="bottom-button">Ask another question!</button>
+</div>

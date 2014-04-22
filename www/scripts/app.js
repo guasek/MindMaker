@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('mindMakerApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute',
-    'mindmaker.menu'
+        'ngCookies',
+        'ngResource',
+        'ngSanitize',
+        'ngRoute',
+        'mindmaker.menu'
 ])
 
 .config(function ($routeProvider) {
@@ -14,8 +14,9 @@ angular.module('mindMakerApp', [
         templateUrl: 'views/new_question.html',
         controller: 'questionController'
     })
-    .when('questions', {
-        templateUrl: 'views/answered_question.html'
+    .when('/question/:questionId', {
+        templateUrl: 'views/answered_question.html',
+        controller: 'answerController'
     })
     .otherwise({
         redirectTo: '/'

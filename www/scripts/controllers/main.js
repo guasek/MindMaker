@@ -2,9 +2,13 @@
 
 var mindmaker = angular.module('mindMakerApp');
 
-mindmaker.controller('mainController', function ($scope) {
+mindmaker.controller('mainController', ['$scope', function ($scope) {
     $scope.askedQuestions = [];
-});
+}]);
+
+mindmaker.controller('answerController', ['$scope', '$routeParams', function ($scope, $routeParams) {
+    $scope.question = $scope.askedQuestions[$routeParams.questionId];
+}]);
 
 mindmaker.controller('questionController', function ($scope) {
 
