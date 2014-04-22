@@ -45,6 +45,16 @@
     position:relative;
 }
 
+.submitted-background{
+    background: #37d478;
+    height: 100%;
+}
+
+.submitted-button {
+    background: #27ae60;
+    border-width: 0px;
+}
+
 #about-us span{
     display: block;
     margin: 1.5em;

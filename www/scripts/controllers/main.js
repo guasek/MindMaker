@@ -10,6 +10,9 @@ mindmaker.controller('answerController', ['$scope', '$routeParams', function ($s
     $scope.question = $scope.askedQuestions[$routeParams.questionId];
 }]);
 
+mindmaker.controller('submitController', [function () {
+}]);
+
 mindmaker.controller('questionController', function ($scope) {
 
     var Option = function () {

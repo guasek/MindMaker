@@ -18,6 +18,10 @@ angular.module('mindMakerApp', [
         templateUrl: 'views/answered_question.html',
         controller: 'answerController'
     })
+    .when('/submitted', {
+        templateUrl: 'views/question_submitted.html',
+        controller: 'submitController'
+    })
     .otherwise({
         redirectTo: '/'
     });
