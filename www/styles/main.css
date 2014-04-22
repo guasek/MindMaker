@@ -36,13 +36,18 @@
     height: 1em;
 }
 
-#nav-left-header{
+.nav-header{
     height: 1rem;
     padding: 1.5rem;
 }
 
 #main-screen {
     position:relative;
+}
+
+#about-us span{
+    display: block;
+    margin: 1.5em;
 }
 
 .bottom-button{

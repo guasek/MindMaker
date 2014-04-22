@@ -11,7 +11,7 @@
   <body ng-app="mindMakerApp" class="ng-scope">
       <div id="mindmaker-app" ng-controller="mainController">
           <div id="sp-nav-left">
-              <div id="nav-left-header">
+              <div id="nav-left-header" class="nav-header">
                   My questions
               </div>
               <div class="topcoat-list-container">
@@ -23,9 +23,26 @@
               </div>
           </div>
           <div id="sp-nav-right">
-              <div class="topcoat-list-container">
-                  <ul class="topcoat-list">
-                      <li ng-repeat="question in askedQuestions" class="topcoat-list__item">{{ question.questionText }}</li>
+              <div id="nav-right-header" class="nav-header">
+                  About us
+              </div>
+              <div id="about-us">
+                  <span>
+                      "Make up your mind!". How often does someone or your internal voice tell you to do so? And how often you simply don't know what to do? And how often you would like someone to help you make a decision? And how often this "someone" is simply not there? It has now changed for there will be always some REAL person to help you make a decision. And we do guarantee that.
+                  </span>
+                  <span>
+                      Our experts:
+                  </span>
+                  <ul>
+                      <li>
+                          Kathy - Fashion Blogger
+                      </li>
+                      <li>
+                          Jenny - Keen Traveller
+                      </li>
+                      <li>
+                          Phil - Professional Chef
+                      </li>
                   </ul>
               </div>
           </div>
