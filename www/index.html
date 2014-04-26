@@ -16,8 +16,8 @@
               </div>
               <div class="topcoat-list-container">
                   <ul class="topcoat-list">
-                      <li ng-repeat="question in askedQuestions" class="topcoat-list__item">
-                          <a href="#question/{{$index}}">{{ question.questionText }}</a>
+                      <li ng-repeat="question in askedQuestions.questions" class="topcoat-list__item">
+                          <a href="#question/{{$index}}" ng-click="$spMenu.toggleLeft()">{{ question.questionText }}</a>
                       </li>
                   </ul>
               </div>
