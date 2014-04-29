@@ -17,6 +17,10 @@
               <div class="topcoat-list-container">
                   <ul class="topcoat-list">
                       <li ng-repeat="question in askedQuestions.questions" class="topcoat-list__item">
+                          <span class="answer-light">
+                              <span class="not-answered" ng-hide="question.isAnswered()"></span>
+                              <span class="already-answered" ng-show="question.isAnswered()"></span>
+                          </span>
                           <a href="#question/{{$index}}" ng-click="$spMenu.toggleLeft()">{{ question.questionText }}</a>
                       </li>
                   </ul>
@@ -74,7 +78,10 @@
           <script src="bower_components/angular-route/angular-route.js"></script>
 
           <script src="scripts/app.js"></script>
+          <script src="scripts/domain/question.js"></script>
+          <script src="scripts/domain/questionRepository.js"></script>
           <script src="scripts/controllers/main.js"></script>
+          <script src="scripts/modules/device.js"></script>
           <script src="scripts/modules/navigation.js"></script>
           <script type="text/javascript">
               document.ontouchmove = function(e){
