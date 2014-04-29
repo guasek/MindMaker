@@ -1,7 +1,7 @@
 <div id="main-screen" class="center full">
     <span>Ask me anything</span>
-    <form class="full" ng-init="question = questionPrototype.newQuestion(5)">
-        <textarea ng-model="question.questionText" id="question-input"></textarea>
+    <form name="questionForm" class="full" ng-init="question = questionPrototype.newQuestion(5)">
+        <textarea ng-model="question.questionText" id="question-input" ng-required="true" ng-minlength="5"></textarea>
         <textarea
                 ng-repeat="option in question.options"
                 ng-model="option.optionValue"
@@ -10,6 +10,13 @@
             <span class="icon-add"></span>
             <span class="tap-text">Add answer option</span>
         </div>
+        <button
+                id="submit-button"
+                type="submit"
+                class="bottom-button"
+                ng-disabled="questionForm.$invalid"
+                click-link="submitted"
+                ng-click="questionAsked()"
+                >Ask me now!</button>
     </form>
-    <button id="submit-button" class="bottom-button" click-link="submitted" ng-click="askedQuestions.push(question); question = questionPrototype.newQuestion(5)">Ask me now!</button>
 </div>

@@ -2,40 +2,28 @@
 
 var mindmaker = angular.module('mindMakerApp');
 
-mindmaker.controller('mainController', ['$scope', function ($scope) {
-    $scope.askedQuestions = [];
+mindmaker.controller('mainController', ['$scope', 'questionRepository', function ($scope, questionRepository) {
+    questionRepository.getUserQuestions().
+    success(function(data) {
+        $scope.askedQuestions = AskedQuestions.fromJSON(data.data);
+    });
+
 }]);
 
 mindmaker.controller('answerController', ['$scope', '$routeParams', function ($scope, $routeParams) {
-    $scope.question = $scope.askedQuestions[$routeParams.questionId];
+    $scope.question = $scope.askedQuestions.questions[$routeParams.questionId];
 }]);
 
 mindmaker.controller('submitController', [function () {
 }]);
 
-mindmaker.controller('questionController', function ($scope) {
-
-    var Option = function () {
-        this.optionValue = '';
+mindmaker.controller('questionController', ['$scope', 'questionRepository', function ($scope, questionRepository) {
+    var questionPrototype = Question;
+    $scope.questionAsked = function () {
+        questionRepository.store($scope.question).success(function(){
+            $scope.askedQuestions.addQuestion($scope.question);
+            $scope.question = questionPrototype.newQuestion(5);
+        });
     }
-
-    var Question = function(maxOptions) {
-        this.questionText = '';
-        this.options = [];
-        this.remainingOptions = maxOptions;
-    };
-
-    Question.prototype.addOption = function() {
-        if (this.remainingOptions == 0) {
-            return;
-        }
-        this.options.push(new Option());
-        this.remainingOptions -= 1;
-    };
-
-    Question.newQuestion = function (maxOptions){
-        return new Question(maxOptions);
-    }
-
-    $scope.questionPrototype = Question;
-});
+    $scope.questionPrototype = questionPrototype;
+}]);
