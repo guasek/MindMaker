@@ -85,9 +85,13 @@
 .bottom-button{
     width: 100%;
     height: 15%;
-    position:fixed;
-    bottom: 0;
+    top: 70%;
     left: 0;
+    position: absolute;
+}
+
+#question-form {
+    position: relative;
 }
 
 #question-input {

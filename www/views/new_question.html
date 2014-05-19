@@ -1,6 +1,6 @@
 <div id="main-screen" class="center full">
     <span>Ask me anything</span>
-    <form name="questionForm" class="full" ng-init="question = questionPrototype.newQuestion(5)">
+    <form id="question-form" name="questionForm" class="full" ng-init="question = questionPrototype.newQuestion(5)">
         <textarea ng-model="question.questionText" id="question-input" ng-required="true" ng-minlength="5"></textarea>
         <textarea
                 ng-repeat="option in question.options"
